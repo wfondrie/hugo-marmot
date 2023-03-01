@@ -1,10 +1,27 @@
-</div>
-</div>
-<footer class="footer">
-  {{ partial "foot_custom.html" . }}
-  {{ with .Site.Params.footer }}
-  {{ replace . "{Year}" now.Year | markdownify}}
+<div class="footer">
+  {{ with .Site.Params.buyMeACoffee }}
+  <div class="support-footer">
+    <div class="copyright"></div>
+    <div class="support-tag">Enjoyed these posts?</div>
+    <span class="article-button">
+      <a class="pure-button" href="https://www.buymeacoffee.com/{{ . }}" target="_blank">
+        <span>buy me a coffee</span>
+      </a>
+    </span>
+  </div>
   {{ end }}
+
+  {{ with .Site.Params.footer }}
+  <div class="copyright">
+    {{ replace . "{Year}" now.Year | markdownify}}
+  </div>
+  {{ end }}
+</div>
+</div>
+</div>
+
+<footer>
+  {{ partial "foot_custom.html" . }}
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
