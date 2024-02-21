@@ -41,6 +41,7 @@ ul {
 
 blockquote {
     border-left: 2px solid var(--accent-color);
+    padding-left: 16px;
 }
 
 table {
